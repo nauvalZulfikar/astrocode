@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdeathscreen001"]
+
+[ext_resource type="Script" path="res://scripts/ui/death_screen.gd" id="1_death"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_death_bg"]
+bg_color = Color(0.12, 0.04, 0.04, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6, 0.15, 0.15)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="DeathScreen" type="CanvasLayer"]
+layer = 25
+process_mode = 3
+script = ExtResource("1_death")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -50.0
+offset_right = 80.0
+offset_bottom = 50.0
+custom_minimum_size = Vector2(160, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_death_bg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+add_theme_constant_override("separation", 4)
+
+[node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "SYSTEM FAILURE"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.9, 0.25, 0.25, 1)
+
+[node name="CauseLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "You ran out of oxygen."
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 6
+theme_override_colors/font_color = Color(0.95, 0.8, 0.8, 1)
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="SableLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "SABLE: Your O2 recycler had no error handling."
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 5
+theme_override_colors/font_color = Color(0.7, 0.85, 0.95, 1)
+autowrap_mode = 2
+
+[node name="BtnRespawn" type="Button" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Respawn at Base"
+theme_override_font_sizes/font_size = 6

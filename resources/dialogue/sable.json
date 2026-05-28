@@ -1,0 +1,11 @@
+{
+  "first_boot": {
+    "lines": [
+      {"speaker": "SABLE", "text": "S-A-B-L-E... Systems Advisor for Biome Logistics and Engineering. Rebooting."},
+      {"speaker": "SABLE", "text": "Critical alert: oxygen recycler offline. Atmospheric O2 at 23%. Declining."},
+      {"speaker": "SABLE", "text": "I've located a Python terminal in the wreckage. The recycler's control script needs a threshold variable."},
+      {"speaker": "SABLE", "text": "Open the terminal. Type: threshold = 18. That tells the recycler when to activate."},
+      {"speaker": "SABLE", "text": "Fix it, or we have approximately six hours of breathable air remaining."}
+    ]
+  }
+}

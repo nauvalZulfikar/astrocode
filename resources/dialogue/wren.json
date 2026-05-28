@@ -1,0 +1,170 @@
+{
+  "character": "Wren",
+  "identity": "Engineer from Expedition 3. Survived alone for 5 years in Brine Hollows. Partner Lao died Day 23.",
+  "voice_notes": "Gruff, impatient, hands always busy. 'Code crashes. Circuits endure.' Respects competence. Teaches through challenge.",
+
+  "first_meeting": {
+    "context": "Player enters Brine Hollows and finds Wren's workshop. She is soldering and does not look up immediately.",
+    "lines": [
+      { "speaker": "Wren", "text": "Stay there. Don't touch anything." },
+      { "speaker": "narration", "text": "[Wren sets down her soldering iron. Stares.]" },
+      { "speaker": "Wren", "text": "You're real. Not a drone. Not a hallucination." },
+      { "speaker": "Wren", "text": "Expedition 4? Solo? That's either brave or idiotic." },
+      { "speaker": "Wren", "text": "Five years I've been down here. Kept the lights on with copper and stubbornness." }
+    ],
+    "player_responses": [
+      { "id": "friendly", "text": "I'm glad you're alive.", "next": "first_meeting_friendly" },
+      { "id": "direct", "text": "I crashed on the Flats. I need help.", "next": "first_meeting_direct" },
+      { "id": "curious", "text": "How did you survive without code?", "next": "first_meeting_curious" }
+    ],
+    "first_meeting_friendly": [
+      { "speaker": "Wren", "text": "Likewise. Don't make me regret saying that." },
+      { "speaker": "Wren", "text": "My water purifier's failing. You any good with voltage?" }
+    ],
+    "first_meeting_direct": [
+      { "speaker": "Wren", "text": "Everyone crashes. The question is what you build after." },
+      { "speaker": "Wren", "text": "I've got a purifier that needs fixing. Show me what you're worth." }
+    ],
+    "first_meeting_curious": [
+      { "speaker": "Wren", "text": "Code crashes. Circuits endure." },
+      { "speaker": "Wren", "text": "I wired everything by hand. Analog. No compiler, no debugger. Just copper and math." },
+      { "speaker": "Wren", "text": "But I'll admit... some things need both. My purifier, for instance." }
+    ]
+  },
+
+  "quest_purifier": {
+    "context": "Wren's water purifier sensor needs 1.5V from a 3V battery. Voltage divider puzzle.",
+    "quest_name": "Bitter Water",
+    "objectives": ["Build a voltage divider circuit to supply 1.5V to the purifier sensor", "Deliver the working circuit to Wren"],
+    "lines": [
+      { "speaker": "Wren", "text": "The purifier sensor runs on 1.5 volts. Battery puts out 3." },
+      { "speaker": "Wren", "text": "Direct connection fried the last sensor. I have one spare. Do not waste it." },
+      { "speaker": "Wren", "text": "Two resistors. Split the voltage. You know what a voltage divider is?" }
+    ],
+    "player_responses": [
+      { "id": "yes", "text": "Vout equals Vin times R2 over R1 plus R2.", "next": "quest_purifier_yes" },
+      { "id": "no", "text": "Not yet.", "next": "quest_purifier_no" }
+    ],
+    "quest_purifier_yes": [
+      { "speaker": "Wren", "text": "Good. Then you know the math. Now do it with the resistors I actually have." },
+      { "speaker": "Wren", "text": "100 ohm and 220 ohm. Figure out the combination." }
+    ],
+    "quest_purifier_no": [
+      { "speaker": "Wren", "text": "Two resistors in series. The voltage between them depends on the ratio." },
+      { "speaker": "Wren", "text": "Vout equals Vin times R2 divided by R1 plus R2. That's the whole trick." },
+      { "speaker": "Wren", "text": "I have 100 and 220 ohm resistors. Make it work." }
+    ]
+  },
+
+  "quest_purifier_complete": {
+    "context": "Player wires the voltage divider correctly. Purifier sensor is operational.",
+    "lines": [
+      { "speaker": "Wren", "text": "Clean reading. Sensor's holding." },
+      { "speaker": "Wren", "text": "You actually checked the ratio before wiring. That's rarer than you'd think." },
+      { "speaker": "Wren", "text": "My workbench is yours to use. I've got components to trade if you bring bio-fuel." },
+      { "speaker": "Wren", "text": "Also... run five purification cycles with a for loop. Doing it manually five times is how things break." }
+    ]
+  },
+
+  "quest_memorial": {
+    "context": "After completing the purifier and seismic sensor, Wren asks to build a beacon for Lao.",
+    "quest_name": "Signal Fire",
+    "objectives": ["Build a weather-resistant relay circuit for the beacon", "Write an event callback to trigger the beacon at nightfall", "Install the beacon on the Alkaline Flats surface"],
+    "lines": [
+      { "speaker": "Wren", "text": "I need to ask you something. Not a trade. Not a job." },
+      { "speaker": "Wren", "text": "My partner. Lao. Day 23, up on the Flats. Storm took the drones and without them..." },
+      { "speaker": "narration", "text": "[Wren's hands stop moving for the first time.]" },
+      { "speaker": "Wren", "text": "I want a beacon up there. Lights up every night. Something on this planet that remembers." },
+      { "speaker": "Wren", "text": "Relay circuit. Light sensor drives a transistor, transistor fires the relay, relay switches the lamp." },
+      { "speaker": "Wren", "text": "And code for the trigger. Event callback on the light reading dropping below threshold." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll build it.", "next": "quest_memorial_accept" },
+      { "id": "ask_lao", "text": "Tell me about Lao.", "next": "quest_memorial_lao" }
+    ],
+    "quest_memorial_accept": [
+      { "speaker": "Wren", "text": "Thank you. Make it weather-resistant. The alkaline dust eats everything up there." }
+    ],
+    "quest_memorial_lao": [
+      { "speaker": "Wren", "text": "Better coder than me. Worse electrician. We balanced out." },
+      { "speaker": "Wren", "text": "Lao wrote the drone navigation. All 14,000 lines. Elegant stuff." },
+      { "speaker": "Wren", "text": "But elegant doesn't survive a planet that changes the rules every morning." },
+      { "speaker": "Wren", "text": "Build the beacon. That's enough talking." }
+    ]
+  },
+
+  "quest_memorial_complete": {
+    "context": "Beacon is installed. It pulses to life at nightfall on the Flats. Wren is present.",
+    "lines": [
+      { "speaker": "narration", "text": "[The beacon activates. A single pulse of light on the dark salt plains.]" },
+      { "speaker": "Wren", "text": "..." },
+      { "speaker": "Wren", "text": "It works." },
+      { "speaker": "Wren", "text": "One light on a whole dark planet." },
+      { "speaker": "Wren", "text": "Lao would've--" },
+      { "speaker": "narration", "text": "[Wren turns away. A moment passes.]" },
+      { "speaker": "Wren", "text": "Here. My personal toolkit. Precision soldering components. I don't need them anymore." },
+      { "speaker": "Wren", "text": "You do good work. Don't let that go to your head." }
+    ]
+  },
+
+  "quest_seismic": {
+    "context": "Wren needs a seismic sensor to predict cave-ins in the Hollows.",
+    "quest_name": "Solid Ground",
+    "objectives": ["Wire a pressure sensor with capacitor smoothing", "Connect the sensor to an alert callback", "Test the sensor by triggering a controlled vibration"],
+    "lines": [
+      { "speaker": "Wren", "text": "Cave-ins are getting worse. Lost a tunnel last week I spent three months clearing." },
+      { "speaker": "Wren", "text": "I need a seismic sensor. Pressure readings smoothed with a capacitor." },
+      { "speaker": "Wren", "text": "Without the cap, every footstep looks like a quake. With it, you get clean data." },
+      { "speaker": "Wren", "text": "Wire it up, hook it to an alert. Thirty seconds of warning is enough to move." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll build it.", "next": "quest_seismic_accept" }
+    ],
+    "quest_seismic_accept": [
+      { "speaker": "Wren", "text": "Good. Capacitor across the power pins. Smooths the ripple. You'll see the difference." }
+    ]
+  },
+
+  "quest_seismic_complete": {
+    "context": "Seismic sensor installed and operational. Cave-in prediction working.",
+    "lines": [
+      { "speaker": "Wren", "text": "Thirty-eight seconds of lead time on that last tremor. More warning than I've had in five years." },
+      { "speaker": "Wren", "text": "Clean wiring too. You're getting better." },
+      { "speaker": "Wren", "text": "Advanced stock is open. Transistors, microcontrollers, relay modules. Bring bio-fuel." }
+    ]
+  },
+
+  "idle_1": {
+    "context": "Random idle dialogue. Circuit tips.",
+    "lines": [
+      { "speaker": "Wren", "text": "When a transistor gets hot, your current's too high. Check the base resistor before you blame the component." },
+      { "speaker": "Wren", "text": "Nine times out of ten, the problem is the wiring. Not the parts." }
+    ]
+  },
+
+  "idle_2": {
+    "context": "Random idle dialogue. Remembering Lao.",
+    "lines": [
+      { "speaker": "Wren", "text": "Lao used to say debugging was asking the right questions in the right order." },
+      { "speaker": "Wren", "text": "I said circuits don't need debugging. Still technically won that argument." },
+      { "speaker": "Wren", "text": "Doesn't feel like winning." }
+    ]
+  },
+
+  "idle_3": {
+    "context": "Random idle dialogue. Complaints about software.",
+    "lines": [
+      { "speaker": "Wren", "text": "Software people want everything abstracted. Layer on layer on layer." },
+      { "speaker": "Wren", "text": "A resistor is a resistor. No dependency. No version conflict. Just physics." },
+      { "speaker": "Wren", "text": "I respect that about a resistor." }
+    ]
+  },
+
+  "trade": {
+    "context": "Player opens Wren's trade interface.",
+    "lines": [
+      { "speaker": "Wren", "text": "Bio-fuel gets you components. Fair rates. I don't haggle." },
+      { "speaker": "Wren", "text": "Break something I sold you, that's your problem. I tested every piece." }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "datapad_001",
+    "title": "Expedition 1 - Day 3: First Contact with Thaline",
+    "text": "The crystalline deposits are unlike anything in Earth's geological record. Piezoelectric response off the charts. Dr. Venn spent four hours staring at the spectrometer readout, then said: 'It's not a mineral. It's a nervous system.' We thought she was being poetic. She wasn't.",
+    "biome": "Ferric Badlands",
+    "category": "expedition_log",
+    "author": "Pvt. Reno Aguilar, Expedition 1"
+  },
+  {
+    "id": "datapad_002",
+    "title": "Expedition 3 - Day 18: The Drones Are Failing",
+    "text": "Lost Falcor-7 today. Same failure mode as the others -- dust composition outside parameter tables, decision tree returns null, motors lock. Lao rewrote the handler three times. Each fix lasts two days before some new edge case kills it. This planet doesn't repeat itself. Our code does.",
+    "biome": "Alkaline Flats",
+    "category": "expedition_log",
+    "author": "Eng. Wren Nakamura, Expedition 3"
+  },
+  {
+    "id": "datapad_003",
+    "title": "Expedition 2 - Day 2: Mission Brief Addendum",
+    "text": "Command's theory: Expedition 1 was attacked by hostile fauna. Our loadout: pulse rifles, kinetic barriers, threat detection AI. Torres asked what we're supposed to shoot at. Command said 'Whatever stopped transmitting.' Torres said 'What if it's the weather?' Nobody laughed.",
+    "biome": "Spore Marshes",
+    "category": "expedition_log",
+    "author": "Lt. Dara Okonkwo, Expedition 2"
+  },
+  {
+    "id": "datapad_004",
+    "title": "Engineering Note: Voltage Drop in Alkaline Environments",
+    "text": "Salt crystal deposits corrode copper wire at 0.2mm/day in exposed conditions. Insulate EVERYTHING. Uninsulated circuits in the Flats lose 15% conductivity per week. Found this out by watching my LED panel dim over six days and blaming the battery. It was the wiring. It's always the wiring.",
+    "biome": "Alkaline Flats",
+    "category": "engineering_note",
+    "author": "Eng. Wren Nakamura, Expedition 3"
+  },
+  {
+    "id": "datapad_005",
+    "title": "Expedition 1 - Day 9: Dr. Venn's Hypothesis",
+    "text": "Venn says the electromagnetic storms aren't natural weather. They're a response. The planet detects concentrated EM activity -- our equipment -- and the thaline network amplifies interference until the source stops. 'It's an immune system,' she said. 'We're the infection.' Morale is not improved by this analogy.",
+    "biome": "Resonance Peaks",
+    "category": "expedition_log",
+    "author": "Pvt. Reno Aguilar, Expedition 1"
+  },
+  {
+    "id": "datapad_006",
+    "title": "Personal Log: 347 Days Alone",
+    "text": "Built a chair today. Not because I needed one -- I sit on crates. Built it because I wanted to make something that wasn't about survival. Four legs, a back, no nails. Dowel joints. Lao would've said it needs a cushion. Lao would've been right. It's a terrible chair. I'm keeping it.",
+    "biome": "Brine Hollows",
+    "category": "personal_log",
+    "author": "Eng. Wren Nakamura, Expedition 3"
+  },
+  {
+    "id": "datapad_007",
+    "title": "Engineering Note: Capacitor Behavior in High Humidity",
+    "text": "Ceramic capacitors absorb moisture in the Hollows and drift 20-30% from rated value. Mica caps hold steady. If your oscillator drifts underground, swap to mica before you blame the crystal. Also: never store capacitors near the acid pools. I lost a week's supply to one careless shelf placement.",
+    "biome": "Brine Hollows",
+    "category": "engineering_note",
+    "author": "Eng. Wren Nakamura, Expedition 3"
+  },
+  {
+    "id": "datapad_008",
+    "title": "Expedition 2 - Day 4: Final Entry",
+    "text": "The storm came without warning. Every screen, every sensor, every comms relay -- dead in three seconds. Torres ordered a retreat to the ship but the nav computer was gone too. Cass -- the flight AI -- managed to download into a drone before the main core fried. Smart machine. Smarter than us, maybe. We're walking blind now. If anyone reads this: the weapons don't help. Bring a teacher instead.",
+    "biome": "Spore Marshes",
+    "category": "expedition_log",
+    "author": "Lt. Dara Okonkwo, Expedition 2"
+  },
+  {
+    "id": "datapad_009",
+    "title": "Personal Log: Lao's Last Night",
+    "text": "Lao knew the drones couldn't handle the storm. Said so three times. I said we'd fix the code in the morning. There wasn't a morning for Lao. I replay this conversation every night. I could have listened. I could have pulled the drones back. I chose to sleep instead. Circuits don't need sleep. People make mistakes when they're tired. Lao deserved better than a tired partner.",
+    "biome": "Alkaline Flats",
+    "category": "personal_log",
+    "author": "Eng. Wren Nakamura, Expedition 3"
+  },
+  {
+    "id": "datapad_010",
+    "title": "Expedition 1 - Day 11: Harmonics Test",
+    "text": "Venn ran the harmonizer prototype at 0300. Fed a sine wave through the thaline sample, matching its resonant frequency. The interference STOPPED. For eleven seconds, complete silence on the EM spectrum. Then she adjusted the amplitude too high and the sample cracked. But for eleven seconds -- proof. A harmonized signal passes through. Venn is rebuilding the prototype. She says she can scale it. We need more thaline and more time. I hope we have both.",
+    "biome": "Resonance Peaks",
+    "category": "expedition_log",
+    "author": "Pvt. Reno Aguilar, Expedition 1"
+  }
+]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://brobotpanel001"]
+
+[ext_resource type="Script" path="res://scripts/ui/robot_panel.gd" id="1_robotpanel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_battery_fill"]
+bg_color = Color(0.2, 0.8, 0.3, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_battery_bg"]
+bg_color = Color(0.15, 0.2, 0.1, 0.7)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="RobotPanel" type="CanvasLayer"]
+layer = 12
+script = ExtResource("1_robotpanel")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -150.0
+custom_minimum_size = Vector2(126, 145)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 3
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Scuttle"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 7
+
+[node name="TypeLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Type: scuttle"
+theme_override_font_sizes/font_size = 5
+
+[node name="BatteryBar" type="ProgressBar" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 6)
+theme_override_styles/fill = SubResource("StyleBoxFlat_battery_fill")
+theme_override_styles/background = SubResource("StyleBoxFlat_battery_bg")
+max_value = 45.0
+value = 45.0
+show_percentage = false
+
+[node name="StatusLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Status: idle"
+theme_override_font_sizes/font_size = 5
+
+[node name="CargoLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Cargo: 0/6"
+theme_override_font_sizes/font_size = 5
+autowrap_mode = 2
+
+[node name="TaskLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Tasks queued: 0"
+theme_override_font_sizes/font_size = 5
+
+[node name="ButtonRow" type="HBoxContainer" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnGoHere" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Go Here"
+theme_override_font_sizes/font_size = 5
+
+[node name="BtnGather" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gather"
+theme_override_font_sizes/font_size = 5
+
+[node name="BtnReturn" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Return"
+theme_override_font_sizes/font_size = 5
+
+[node name="ButtonRow2" type="HBoxContainer" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="BtnShutdown" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shutdown"
+theme_override_font_sizes/font_size = 5
+
+[node name="BtnClose" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Close"
+theme_override_font_sizes/font_size = 5

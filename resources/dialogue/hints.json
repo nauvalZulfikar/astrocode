@@ -1,0 +1,74 @@
+{
+  "character": "SABLE",
+  "purpose": "Contextual hints for when players are stuck. Two tiers: subtle (leading question) and explicit (shows the solution). Triggered after failed attempts.",
+
+  "prog_01_print": {
+    "lesson": "Lesson 1: print() and strings",
+    "context": "Player must type print('SABLE REBOOT CONFIRM') to unlock ship diagnostics.",
+    "subtle": "The terminal expects an exact phrase. The function that displays text to the screen -- what is it called?",
+    "explicit": "Type: print(\"SABLE REBOOT CONFIRM\"). The quotes tell Python it's text, not a command."
+  },
+
+  "prog_02_variables": {
+    "lesson": "Lesson 2: Variables and assignment",
+    "context": "O2 recycler needs a threshold value. Player must assign threshold = 18.",
+    "subtle": "The recycler function expects a number. What value should trigger it?",
+    "explicit": "Type: threshold = 18. This tells the recycler to activate when O2 drops below 18%."
+  },
+
+  "prog_03_if_else": {
+    "lesson": "Lesson 3: if/else conditionals",
+    "context": "Shelter door must auto-close when wind exceeds safe limits.",
+    "subtle": "The door should close when wind is dangerous and open when it's safe. What condition separates those two states?",
+    "explicit": "Type: if sensor.read(\"wind\") > 40: robot.close_door() -- then on the next line: else: robot.open_door()"
+  },
+
+  "prog_04_comparison": {
+    "lesson": "Lesson 4: Comparison operators and elif",
+    "context": "Scuttle picks up everything. Needs a priority filter for scrap_metal and copper_wire.",
+    "subtle": "Scuttle doesn't know what's valuable. How would you check what the item is before gathering it?",
+    "explicit": "Type: if item == \"scrap_metal\": robot.gather(item) -- use elif for copper_wire, and else to skip junk."
+  },
+
+  "prog_05_while_loop": {
+    "lesson": "Lesson 5: while loops",
+    "context": "Scuttle dies mid-run because it has no return-to-base logic. Needs a battery check loop.",
+    "subtle": "Scuttle keeps gathering until it dies. What condition should make it stop and go home?",
+    "explicit": "Type: while robot.battery() > 15: robot.gather(\"scrap_metal\") -- after the loop, add robot.move_to(base_x, base_y)."
+  },
+
+  "prog_06_math": {
+    "lesson": "Lesson 6: Math operators, int/float",
+    "context": "Campfire burns fuel too fast. Calculate burn rate so stockpile lasts through the 5-hour night.",
+    "subtle": "You have a stockpile and a number of hours. What operation gives you the rate per hour?",
+    "explicit": "Type: burn_rate = stockpile / night_hours. Then: campfire.set_rate(burn_rate). Division splits the fuel evenly."
+  },
+
+  "prog_07_boolean": {
+    "lesson": "Lesson 7: Boolean logic (and/or)",
+    "context": "Expedition 3 drone died checking wind OR temp, never both. Player must use compound conditions.",
+    "subtle": "The drone checked one condition at a time. When are two dangers worse together than alone?",
+    "explicit": "Type: if wind > 40 and temp < 0: robot.shelter(). The 'and' checks both conditions at once."
+  },
+
+  "prog_08_strings": {
+    "lesson": "Lesson 8: String concatenation, robot.log()",
+    "context": "SABLE can't track what Scuttle collects. Player must write a logging script.",
+    "subtle": "SABLE needs a readable message. How do you combine the item name with the word 'Collected'?",
+    "explicit": "Type: robot.log(\"Collected: \" + item + \" x\" + str(count)). The str() converts the number to text so you can join them."
+  },
+
+  "prog_09_for_loop": {
+    "lesson": "Lesson 9: for loops and range()",
+    "context": "Wren's purifier needs 5 filter cycles. Writing purify() five times is error-prone.",
+    "subtle": "Five identical steps. Is there a way to say 'do this 5 times' without writing it 5 times?",
+    "explicit": "Type: for i in range(5): purifier.run_cycle(i). The loop runs the cycle 5 times, passing 0 through 4."
+  },
+
+  "prog_10_lists": {
+    "lesson": "Lesson 10: Lists and indexing",
+    "context": "Ohm dumps 4 sensor readings as raw numbers. Player must store them in a list and check gas levels.",
+    "subtle": "Four readings need a container. What structure holds multiple values in order?",
+    "explicit": "Type: readings = [sensor.read(\"temp\"), sensor.read(\"humidity\"), sensor.read(\"gas\"), sensor.read(\"pressure\")]. Check gas with: if readings[2] > 50: robot.alert(\"toxic gas\")."
+  }
+}

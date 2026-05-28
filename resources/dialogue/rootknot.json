@@ -1,0 +1,150 @@
+{
+  "character": "Rootknot",
+  "identity": "Sessile alien organism rooted in Ferric Badlands. Part fungal network, part mineral lattice. Thousands of years old. Communicates via EM pulses translated by SABLE.",
+  "voice_notes": "Patient, thinks in systems. Geological and ecological analogies. Does not understand urgency. 'The mountain was not built in haste.' All dialogue is translated through SABLE.",
+
+  "first_contact": {
+    "context": "Day 16+. Player approaches Rootknot's mesa in the Ferric Badlands. SABLE detects EM pulses and begins translating.",
+    "lines": [
+      { "speaker": "SABLE", "text": "Anomalous electromagnetic pulses detected. Patterned. Not random." },
+      { "speaker": "SABLE", "text": "Source: the mineral lattice embedded in this mesa. It's... structured. Like language." },
+      { "speaker": "SABLE", "text": "Attempting translation. Stand by." },
+      { "speaker": "SABLE", "text": "Translation approximate. The entity identifies itself as--" },
+      { "speaker": "Rootknot", "text": "[via SABLE] You are small. And warm. And loud with electricity." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Others like you came before. They shouted into the ground with their machines. The ground shouted back." },
+      { "speaker": "Rootknot", "text": "[via SABLE] You are quieter. Why?" }
+    ],
+    "player_responses": [
+      { "id": "honest", "text": "Most of my machines broke. I'm learning as I go.", "next": "first_contact_honest" },
+      { "id": "curious", "text": "What are you?", "next": "first_contact_curious" },
+      { "id": "cautious", "text": "Are you dangerous?", "next": "first_contact_cautious" }
+    ],
+    "first_contact_honest": [
+      { "speaker": "Rootknot", "text": "[via SABLE] Learning. Yes. The soil learns where the water flows. The crystal learns where to grow." },
+      { "speaker": "Rootknot", "text": "[via SABLE] I will watch you learn. It has been long since anything new happened here." }
+    ],
+    "first_contact_curious": [
+      { "speaker": "Rootknot", "text": "[via SABLE] I am the network beneath the stone. I am the current between the iron and the crystal." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Your word for me... SABLE suggests 'Rootknot.' That is close enough." },
+      { "speaker": "Rootknot", "text": "[via SABLE] I have roots in six of your 'biomes.' I have been here since the iron was young." }
+    ],
+    "first_contact_cautious": [
+      { "speaker": "Rootknot", "text": "[via SABLE] Is the mountain dangerous? It does not move. It does not chase." },
+      { "speaker": "Rootknot", "text": "[via SABLE] But if you strike the mountain without understanding, the mountain does not forgive." },
+      { "speaker": "Rootknot", "text": "[via SABLE] I am the same." }
+    ]
+  },
+
+  "quest_magnetometer": {
+    "context": "Rootknot asks the player to map the magnetic anomalies in the Badlands using a magnetometer array.",
+    "quest_name": "Iron Memory",
+    "objectives": ["Build a magnetometer array with calibrated sensor readings", "Map 5 magnetic anomaly zones in the Ferric Badlands", "Return the data to Rootknot"],
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] The iron here remembers. Every tremor, every storm, every pulse of the deep crystal." },
+      { "speaker": "Rootknot", "text": "[via SABLE] But the memory is scattered. Your small machines read only noise." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Build a tool that reads the iron's memory. Correct for the drift. Return what you find." },
+      { "speaker": "SABLE", "text": "It's asking for a magnetometer array. You'll need calibrated functions -- raw readings here are useless without an offset correction." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll map it.", "next": "quest_mag_accept" }
+    ],
+    "quest_mag_accept": [
+      { "speaker": "Rootknot", "text": "[via SABLE] Good. The mountain was not built in haste. Neither should your measurements be." }
+    ]
+  },
+
+  "quest_magnetometer_complete": {
+    "context": "Player returns with calibrated magnetic anomaly data from 5 zones.",
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] Yes. This is what the iron remembers." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Here -- where your map shows the strongest pull -- that is where the deep crystal surfaces. Thaline, you call it." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The planet's bones are made of it. Every vein connects to every other. One system." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The ones who came before did not understand this. They dug where it was easy, not where it was right." },
+      { "speaker": "SABLE", "text": "Rootknot has shared geological data. Magnetite deposit locations added to your map." }
+    ]
+  },
+
+  "quest_sensor_network": {
+    "context": "Rootknot asks the player to build a sensor network across multiple biomes to understand the planet's systems.",
+    "quest_name": "The Listening Web",
+    "objectives": ["Place pressure, temperature, and EM sensors in the Badlands and one adjacent biome", "Wire sensors with proper shielding and insulation per biome", "Write code to aggregate and log data from all sensors"],
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] One ear hears sound. Two ears find direction. Many ears find truth." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Place your listening things across the land. The iron place and the salt place. Hear what the ground says in both." },
+      { "speaker": "Rootknot", "text": "[via SABLE] When you understand two places, you begin to understand the whole." },
+      { "speaker": "SABLE", "text": "Rootknot wants a cross-biome sensor network. Sensors in the Badlands and at least one adjacent biome, logging to a unified dataset." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll build the network.", "next": "quest_sensor_accept" }
+    ],
+    "quest_sensor_accept": [
+      { "speaker": "Rootknot", "text": "[via SABLE] The web does not hurry. But it misses nothing." }
+    ]
+  },
+
+  "quest_sensor_network_complete": {
+    "context": "Sensor network operational across two biomes. Data flowing.",
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] Now you hear what I hear. The slow conversation between stone and crystal." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Look. Your data shows the veins. Thaline runs beneath everything, connecting the eight regions." },
+      { "speaker": "Rootknot", "text": "[via SABLE] I will show you where the crystal surfaces. Take what you need. But listen to what the ground tells you when you dig." },
+      { "speaker": "SABLE", "text": "Thaline vein map data received. Marked on your base terminal. Mining efficiency should improve significantly." }
+    ]
+  },
+
+  "quest_relay_chain": {
+    "context": "Rootknot asks the player to help reconnect with a distant node of its network near the Resonance Peaks.",
+    "quest_name": "Rootknot's Chorus",
+    "objectives": ["Build a chain of signal relay stations from the Badlands to the Resonance Peaks", "Amplify the weak signal with an op-amp circuit", "Establish a stable link between Rootknot and its distant node"],
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] There is a part of me I cannot reach. Near the high place where the sky screams." },
+      { "speaker": "Rootknot", "text": "[via SABLE] A branch, severed by a tremor long ago. It still speaks, but the voice is faint." },
+      { "speaker": "Rootknot", "text": "[via SABLE] Your machines can bridge the gap. Small ones, in a chain, each one passing the voice forward." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The voice is weak. You will need to make it louder without adding noise." },
+      { "speaker": "SABLE", "text": "Signal amplification. An op-amp circuit would work -- boost the clean signal, reject the noise. Then relay it through a Pip chain to the Peaks." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll reconnect you.", "next": "quest_relay_accept" }
+    ],
+    "quest_relay_accept": [
+      { "speaker": "Rootknot", "text": "[via SABLE] The mountain thanks the river for carving its path. Even when the river does not hear." }
+    ]
+  },
+
+  "quest_relay_complete": {
+    "context": "Relay chain established. Rootknot reconnects with its distant node. It learns the truth about the Resonance.",
+    "lines": [
+      { "speaker": "narration", "text": "[A deep hum pulses through the ground. The mesa vibrates. Rootknot is communicating with its distant self.]" },
+      { "speaker": "Rootknot", "text": "[via SABLE] I remember now. What I knew and had forgotten." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The Resonance is not anger. It is not a weapon. It is a heartbeat." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The thaline carries the planet's pulse. When your machines scream into it without rhythm, the heartbeat becomes a seizure." },
+      { "speaker": "Rootknot", "text": "[via SABLE] But a signal that matches the rhythm... the heartbeat would carry it. Farther than any machine alone could send." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The ones before you did not fail because they were weak. They failed because they did not listen." },
+      { "speaker": "SABLE", "text": "This confirms Dr. Venn's hypothesis. The Resonance amplifies harmonized signals. Fight it and it destroys your electronics. Sing with it and..." },
+      { "speaker": "SABLE", "text": "This changes everything about the Array design." }
+    ]
+  },
+
+  "idle_1": {
+    "context": "Random idle dialogue. Rootknot observes systems.",
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] A river does not decide where to flow. It reads the land and follows. Your robots should be the same." }
+    ]
+  },
+
+  "idle_2": {
+    "context": "Random idle dialogue. Rootknot on patience.",
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] You build quickly. This is not always a virtue." },
+      { "speaker": "Rootknot", "text": "[via SABLE] The crystal that grows slowly has no fractures." }
+    ]
+  },
+
+  "idle_3": {
+    "context": "Random idle dialogue. Rootknot on interconnection.",
+    "lines": [
+      { "speaker": "Rootknot", "text": "[via SABLE] Your machines talk to each other now. Like roots sharing water." },
+      { "speaker": "Rootknot", "text": "[via SABLE] You are beginning to think like a network. This is good." }
+    ]
+  }
+}

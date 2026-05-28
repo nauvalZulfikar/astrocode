@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdialogue001"]
+
+[ext_resource type="Script" path="res://scripts/ui/dialogue_panel.gd" id="1_dialogue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_bg"]
+bg_color = Color(0.08, 0.08, 0.12, 0.92)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+content_margin_left = 3
+content_margin_right = 3
+content_margin_top = 2
+content_margin_bottom = 2
+
+[node name="DialoguePanel" type="CanvasLayer"]
+layer = 12
+script = ExtResource("1_dialogue")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_bg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PortraitRect" type="ColorRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 28)
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="SpeakerLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Speaker"
+theme_override_font_sizes/font_size = 7
+theme_override_colors/font_color = Color(0.95, 0.85, 0.4, 1)
+
+[node name="TextLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dialogue text appears here..."
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 6
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="AdvanceHint" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "[E] Continue"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 5
+theme_override_colors/font_color = Color(0.5, 0.5, 0.6, 1)

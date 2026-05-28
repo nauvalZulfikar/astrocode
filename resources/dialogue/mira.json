@@ -1,0 +1,184 @@
+{
+  "character": "Mira",
+  "identity": "Holographic research assistant built by Expedition 1's Dr. Asha Venn. Stored dormant in a data core in the Resonance Peaks for 18 years. Activates when the player supplies power.",
+  "voice_notes": "Calm, analytical, fascinated by patterns. Asks 'What does the data suggest?' before offering interpretation. Close to wonder about the Resonance. Research mentor style.",
+
+  "activation": {
+    "context": "Player powers the data core in the Resonance Peaks. Mira activates for the first time in 18 years.",
+    "lines": [
+      { "speaker": "narration", "text": "[The data core hums. A holographic figure resolves -- translucent, composed, slightly surprised.]" },
+      { "speaker": "Mira", "text": "Power restored. Thank you." },
+      { "speaker": "Mira", "text": "I am Mira. Research assistant, Expedition 1. Dr. Asha Venn created me to study the Resonance." },
+      { "speaker": "Mira", "text": "My last recorded timestamp is... 18 years ago. Dr. Venn. Is she--" }
+    ],
+    "player_responses": [
+      { "id": "gentle", "text": "Expedition 1 went silent. I'm sorry.", "next": "activation_gentle" },
+      { "id": "direct", "text": "No survivors were found. I'm Expedition 4.", "next": "activation_direct" }
+    ],
+    "activation_gentle": [
+      { "speaker": "Mira", "text": "I see. The data suggested that was the most likely outcome. I had hoped the data was wrong." },
+      { "speaker": "Mira", "text": "Expedition 4. Solo. That's a very different hypothesis than what they tried before." },
+      { "speaker": "Mira", "text": "Dr. Venn's research is stored in my core. If you've come this far, you might be the one who can use it." }
+    ],
+    "activation_direct": [
+      { "speaker": "Mira", "text": "Four expeditions. Three failures. And you arrived alone." },
+      { "speaker": "Mira", "text": "That's either a very bold hypothesis or a very desperate one." },
+      { "speaker": "Mira", "text": "Either way, Dr. Venn's research survives. And it may be exactly what you need." }
+    ]
+  },
+
+  "first_meeting": {
+    "context": "After activation, Mira assesses the player's progress and offers to collaborate.",
+    "lines": [
+      { "speaker": "Mira", "text": "I have reviewed your base systems remotely. Sensor networks across multiple biomes. Robot fleet. Automated resource chains." },
+      { "speaker": "Mira", "text": "You built all of this? Fascinating." },
+      { "speaker": "Mira", "text": "Dr. Venn believed the key to surviving Thyra-7 was understanding its patterns. Not fighting them." },
+      { "speaker": "Mira", "text": "Your sensor data suggests you've been doing exactly that. Perhaps without realizing it." },
+      { "speaker": "Mira", "text": "I can help you go further. The Resonance is not random. It has structure. And structure can be modeled." }
+    ],
+    "player_responses": [
+      { "id": "eager", "text": "Teach me.", "next": "first_meeting_eager" },
+      { "id": "skeptical", "text": "Three expeditions failed with more people and more resources.", "next": "first_meeting_skeptical" }
+    ],
+    "first_meeting_eager": [
+      { "speaker": "Mira", "text": "A student who arrives with their own data and their own questions. Dr. Venn would have liked you." },
+      { "speaker": "Mira", "text": "Let's start with what you've already collected." }
+    ],
+    "first_meeting_skeptical": [
+      { "speaker": "Mira", "text": "They did. But more resources meant more electromagnetic noise. More noise meant stronger Resonance response." },
+      { "speaker": "Mira", "text": "They triggered their own destruction. You, working alone and quietly, may actually succeed." },
+      { "speaker": "Mira", "text": "The question is whether you can learn fast enough. Shall we find out?" }
+    ]
+  },
+
+  "quest_decision_tree": {
+    "context": "Mira introduces decision trees to classify thaline crystal purity from sensor readings.",
+    "quest_name": "Crystal Logic",
+    "objectives": ["Design a decision tree to classify thaline purity (pure/impure/waste)", "Train the tree on 200 labeled sensor samples", "Deploy the classifier to the thaline sorting station"],
+    "lines": [
+      { "speaker": "Mira", "text": "You've been mining thaline crystal. Some pure, some impure, some waste. How do you tell them apart?" },
+      { "speaker": "Mira", "text": "Currently? You're guessing. Your waste rate is 40 percent." }
+    ],
+    "player_responses": [
+      { "id": "ask", "text": "What does the data say?", "next": "quest_tree_ask" },
+      { "id": "rules", "text": "I could write if/else rules.", "next": "quest_tree_rules" }
+    ],
+    "quest_tree_ask": [
+      { "speaker": "Mira", "text": "Good question. The right question, actually." },
+      { "speaker": "Mira", "text": "Three sensor readings per crystal: clarity, electromagnetic response, mass. You have 200 labeled samples." },
+      { "speaker": "Mira", "text": "A decision tree finds the splits that separate pure from impure from waste. Let the data draw the boundaries." }
+    ],
+    "quest_tree_rules": [
+      { "speaker": "Mira", "text": "You could. But how would you choose the thresholds? Intuition? That's a hypothesis with no evidence." },
+      { "speaker": "Mira", "text": "You have 200 labeled samples. Three features each. Let the data decide where to split." },
+      { "speaker": "Mira", "text": "A decision tree does exactly this. Systematically. No guessing." }
+    ]
+  },
+
+  "quest_tree_complete": {
+    "context": "Decision tree trained and deployed. Thaline sorting accuracy jumps from 60% to 95%.",
+    "lines": [
+      { "speaker": "Mira", "text": "Accuracy: 95 percent. Waste rate: 5 percent. The data decided better than you could have guessed." },
+      { "speaker": "Mira", "text": "Notice the first split. Clarity above 0.72. You would have guessed 0.7 or 0.8. The tree found 0.72." },
+      { "speaker": "Mira", "text": "That precision is why we let algorithms find boundaries instead of drawing them ourselves." },
+      { "speaker": "Mira", "text": "One more thing. This tree was trained on the data you've collected so far. New crystal types may confuse it." },
+      { "speaker": "Mira", "text": "Models learn what they've seen. Nothing more." }
+    ]
+  },
+
+  "quest_regression": {
+    "context": "Mira introduces regression to predict resonance storm timing from atmospheric data.",
+    "quest_name": "Before the Storm",
+    "objectives": ["Aggregate 10+ days of atmospheric sensor data", "Train a regression model to predict hours-until-storm", "Evaluate accuracy on held-out validation data"],
+    "lines": [
+      { "speaker": "Mira", "text": "Resonance storms. You've lost equipment to them." },
+      { "speaker": "Mira", "text": "They correlate with atmospheric pressure, temperature differential, and thaline activity. The pattern is there. You have the data." },
+      { "speaker": "Mira", "text": "A regression model takes continuous inputs and predicts a continuous output. In this case: hours until the next storm." },
+      { "speaker": "Mira", "text": "But I want you to do something important. Split your data. Train on 80 percent. Test on the remaining 20." },
+      { "speaker": "Mira", "text": "Otherwise you're grading your own exam." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll build the model.", "next": "quest_regression_accept" }
+    ],
+    "quest_regression_accept": [
+      { "speaker": "Mira", "text": "What does the data suggest about the next storm?" },
+      { "speaker": "Mira", "text": "Let's find out together." }
+    ]
+  },
+
+  "quest_regression_complete": {
+    "context": "Regression model trained. Storm prediction accuracy within 45 minutes.",
+    "lines": [
+      { "speaker": "Mira", "text": "Validation accuracy: prediction within 45 minutes. Sufficient to shelter all robots before impact." },
+      { "speaker": "Mira", "text": "Interesting. Your training accuracy was 95 percent. Validation: 81 percent." },
+      { "speaker": "Mira", "text": "That gap is overfitting. The model memorized noise in the training data instead of learning the true pattern." },
+      { "speaker": "Mira", "text": "You reduced it by limiting tree depth. Simpler models generalize better. Remember that." },
+      { "speaker": "Mira", "text": "Dr. Venn used to say: a model that explains everything explains nothing." }
+    ]
+  },
+
+  "quest_neural_net": {
+    "context": "Endgame. Mira asks the player to design the neural network for the Deep Signal Array's frequency modulation.",
+    "quest_name": "The Deep Signal",
+    "objectives": ["Design a neural network architecture for real-time resonance modulation", "Train the network on 30+ days of resonance data", "Deploy the model to the Array's control system"],
+    "lines": [
+      { "speaker": "Mira", "text": "This is it. The final challenge." },
+      { "speaker": "Mira", "text": "The Deep Signal Array must modulate its frequency every 0.3 seconds to match the Resonance. No rule-based system can track those shifts." },
+      { "speaker": "Mira", "text": "You need a neural network. Input: live sensor readings from every biome. Output: the modulation frequency." },
+      { "speaker": "Mira", "text": "Architecture matters. Too few neurons and it can't capture the complexity. Too many and it overfits to noise." },
+      { "speaker": "Mira", "text": "Everything you've built -- every sensor, every data log, every line of code -- converges here." },
+      { "speaker": "Mira", "text": "What does the data suggest?" }
+    ],
+    "player_responses": [
+      { "id": "ready", "text": "Let's build it.", "next": "quest_neural_ready" },
+      { "id": "question", "text": "What if the model isn't good enough?", "next": "quest_neural_question" }
+    ],
+    "quest_neural_ready": [
+      { "speaker": "Mira", "text": "Sixty days of surviving, building, and learning. All of it was preparation for this." },
+      { "speaker": "Mira", "text": "Design the layers. Train the model. And when the loss curve converges... fire the signal." }
+    ],
+    "quest_neural_question": [
+      { "speaker": "Mira", "text": "Then we retrain. Adjust the architecture. Collect more data. Try again." },
+      { "speaker": "Mira", "text": "That's not failure. That's the scientific method." },
+      { "speaker": "Mira", "text": "Dr. Venn ran 47 experiments before she found the correlation. Persistence is a parameter too." }
+    ]
+  },
+
+  "quest_neural_complete": {
+    "context": "Neural network trained. Loss converged. The Array is ready to fire.",
+    "lines": [
+      { "speaker": "Mira", "text": "Loss: 0.008. Validation: 0.012. The model generalizes." },
+      { "speaker": "Mira", "text": "I have watched you go from printing a string to training a neural network. In sixty days." },
+      { "speaker": "Mira", "text": "Dr. Venn theorized that one person with the right knowledge could succeed where teams with the wrong approach failed." },
+      { "speaker": "Mira", "text": "She never got to test that hypothesis. You are the proof." },
+      { "speaker": "Mira", "text": "Dr. Venn would have been proud. I am... something close to proud myself. If a hologram can be." },
+      { "speaker": "Mira", "text": "Fire the Array. Send the signal home." }
+    ]
+  },
+
+  "idle_1": {
+    "context": "Random idle dialogue. Pattern observations.",
+    "lines": [
+      { "speaker": "Mira", "text": "I have been studying your robot movement patterns. They exhibit emergent behavior you did not program." },
+      { "speaker": "Mira", "text": "Scuttle avoids certain paths Drift marked as unstable. They're communicating through the shared log." },
+      { "speaker": "Mira", "text": "Accidental intelligence. The most interesting kind." }
+    ]
+  },
+
+  "idle_2": {
+    "context": "Random idle dialogue. Research mentor style.",
+    "lines": [
+      { "speaker": "Mira", "text": "A common mistake: collecting data and then deciding what question to ask." },
+      { "speaker": "Mira", "text": "Start with the question. Let it determine what data matters." }
+    ]
+  },
+
+  "idle_3": {
+    "context": "Random idle dialogue. Wonder about the Resonance.",
+    "lines": [
+      { "speaker": "Mira", "text": "The Resonance has been pulsing for millions of years. Carrying information through the thaline network." },
+      { "speaker": "Mira", "text": "Information from where? To where? For what purpose?" },
+      { "speaker": "Mira", "text": "Some questions outlive the scientists who ask them. Dr. Venn would have been comfortable with that." }
+    ]
+  }
+}

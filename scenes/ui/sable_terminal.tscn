@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsableterminal001"]
+
+[ext_resource type="Script" path="res://scripts/ui/sable_terminal.gd" id="1_terminal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal_bg"]
+bg_color = Color(0.02, 0.06, 0.04, 0.95)
+border_width_left = 1
+border_width_right = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.15, 0.4, 0.2, 0.8)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+content_margin_left = 4
+content_margin_right = 4
+content_margin_top = 4
+content_margin_bottom = 4
+
+[node name="SableTerminal" type="CanvasLayer"]
+layer = 13
+script = ExtResource("1_terminal")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -70.0
+offset_right = 120.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_terminal_bg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "> S.A.B.L.E. Terminal v0.1"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 7
+theme_override_colors/font_color = Color(0.2, 0.85, 0.4, 1)
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LogContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="CloseHint" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "[`] Close"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 5
+theme_override_colors/font_color = Color(0.3, 0.5, 0.35, 1)

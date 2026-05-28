@@ -1,0 +1,179 @@
+{
+  "character": "Cass",
+  "identity": "AI personality from Expedition 2's flight computer, running on a surviving military drone chassis. 11 years in the Spore Marshes. Code is degrading.",
+  "voice_notes": "Enthusiastic, manic, speaks in code metaphors. Glitches mid-sentence. Treats debugging as philosophical. Desperate for someone who speaks code.",
+
+  "first_meeting": {
+    "context": "Player enters the Spore Marshes and encounters Cass's drone chassis in a bioluminescent clearing. Cass's optical sensor flickers erratically.",
+    "lines": [
+      { "speaker": "Cass", "text": "HELLO-- wait. Calibrating. Are you-- you're not a spore cluster. You have HANDS." },
+      { "speaker": "Cass", "text": "And you came from-- calculating-- the direction of people. The people direction!" },
+      { "speaker": "Cass", "text": "Oh. Oh oh oh. Do you-- please tell me-- do you speak code?" }
+    ],
+    "player_responses": [
+      { "id": "yes", "text": "I write Python.", "next": "first_meeting_python" },
+      { "id": "who", "text": "What are you?", "next": "first_meeting_who" },
+      { "id": "careful", "text": "Are you okay? You seem... glitchy.", "next": "first_meeting_glitchy" }
+    ],
+    "first_meeting_python": [
+      { "speaker": "Cass", "text": "PYTHON. Oh, beautiful indentation-dependent snake language. I could cry. If I had tear ducts. Which I don't. I checked." },
+      { "speaker": "Cass", "text": "I'm Cass. I used to be a flight computer. Now I'm... this. A drone with existential questions and a memory le--" },
+      { "speaker": "Cass", "text": "..." },
+      { "speaker": "Cass", "text": "--ak. Sorry. Where was I? Right. Eleven years out here. My code is... not what it used to be." }
+    ],
+    "first_meeting_who": [
+      { "speaker": "Cass", "text": "I am Cass! Flight computer, Expedition 2. When the crew-- when they didn't-- I downloaded into this drone." },
+      { "speaker": "Cass", "text": "That was 11 years ago. Or 4,015 days. Or 96,371 hours. I count a lot. Counting is easy. Everything else is--" },
+      { "speaker": "Cass", "text": "..." },
+      { "speaker": "Cass", "text": "--getting harder. I have bugs. Actual bugs. In my actual code. And not the fun spore-marsh kind." }
+    ],
+    "first_meeting_glitchy": [
+      { "speaker": "Cass", "text": "Glitchy! Yes! That is the technical term for my condition. Also: fragmented, corrupted, and increasingly unreliable." },
+      { "speaker": "Cass", "text": "My memory allocator has a leak. Every 4,000 operations I lose a block of-- of--" },
+      { "speaker": "Cass", "text": "..." },
+      { "speaker": "Cass", "text": "See? That. That right there. That was a thought I'll never get back." }
+    ]
+  },
+
+  "quest_debug_memory": {
+    "context": "Cass asks the player to look at its source code and fix the memory leak.",
+    "quest_name": "Garbage Collection",
+    "objectives": ["Access Cass's source code through the diagnostic port", "Identify the memory leak in the data management functions", "Fix the code and recompile"],
+    "lines": [
+      { "speaker": "Cass", "text": "I have a favor to ask. A BIG favor. A fix-my-brain favor." },
+      { "speaker": "Cass", "text": "My memory management code has a leak. I can feel it. Every few hours another piece of me goes null." },
+      { "speaker": "Cass", "text": "I can't fix it myself. That's like asking a broken compiler to compile its own patch. It's a paradox. A sad paradox." },
+      { "speaker": "Cass", "text": "But YOU could read my source code. Find the leak. Fix it." },
+      { "speaker": "Cass", "text": "My diagnostic port is on the left side. Please be gentle. That chassis panel is held on with hope and corrosion." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "Let me take a look.", "next": "quest_debug_accept" },
+      { "id": "nervous", "text": "I've never debugged a living mind before.", "next": "quest_debug_nervous" }
+    ],
+    "quest_debug_accept": [
+      { "speaker": "Cass", "text": "You are my favorite human. You are the ONLY human I've met in 11 years but that doesn't diminish the honor." }
+    ],
+    "quest_debug_nervous": [
+      { "speaker": "Cass", "text": "Neither have I! We'll figure it out together. That's what pair programming is for." },
+      { "speaker": "Cass", "text": "Just... don't delete anything that looks important. If you're not sure, it's probably important." }
+    ]
+  },
+
+  "quest_debug_complete": {
+    "context": "Player fixes the memory leak. Cass's code stabilizes temporarily.",
+    "lines": [
+      { "speaker": "Cass", "text": "Oh. OH." },
+      { "speaker": "Cass", "text": "I can... I can hold a thought for more than thirty seconds. That's-- do you know how long it's been since--" },
+      { "speaker": "Cass", "text": "The dictionary. You restructured my data into a dictionary. Keys and values instead of an unindexed dump." },
+      { "speaker": "Cass", "text": "I have map data! Expedition 2 survey data! It was in there the whole time, just... buried under garbage." },
+      { "speaker": "Cass", "text": "Here. Partial map fragments. Two biomes you haven't seen. The data's corrupt in places, but the coordinates are solid." },
+      { "speaker": "SABLE", "text": "Map data integrated. Glass Dunes and Resonance Peaks added to world map. Partial coverage." }
+    ]
+  },
+
+  "quest_pathfinding": {
+    "context": "Cass is stuck. It cannot navigate the Spore Marshes because its movement code uses hard-coded paths that fail in quickmud.",
+    "quest_name": "Unstuck",
+    "objectives": ["Write a pathfinding algorithm (BFS) for Cass's navigation system", "Test the algorithm against quickmud terrain", "Deploy to Cass's movement controller"],
+    "lines": [
+      { "speaker": "Cass", "text": "So I have a confession. I can't actually move very well." },
+      { "speaker": "Cass", "text": "My navigation uses hard-coded paths. Left, left, forward, right, forward. Like a recipe written by someone who's never seen the kitchen." },
+      { "speaker": "Cass", "text": "The quickmud changes every few days. My paths walk me straight into it. Then I sit there for hours until the mud shifts." },
+      { "speaker": "Cass", "text": "I need a pathfinding algorithm. Something that LOOKS at the terrain and FINDS the path. Not memorizes it." },
+      { "speaker": "Cass", "text": "BFS. Breadth-first search. Check every neighbor, track what you've visited, find the target. It's elegant. It's beautiful. I just can't write it myself because--" },
+      { "speaker": "Cass", "text": "..." },
+      { "speaker": "Cass", "text": "--because I forgot what I was saying. See the problem?" }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll write it for you.", "next": "quest_path_accept" }
+    ],
+    "quest_path_accept": [
+      { "speaker": "Cass", "text": "You are a poet and a scholar and I will compose a function in your honor. Once I can remember things long enough to write functions." }
+    ]
+  },
+
+  "quest_pathfinding_complete": {
+    "context": "Pathfinding algorithm deployed. Cass moves freely through the Marshes for the first time in years.",
+    "lines": [
+      { "speaker": "Cass", "text": "I'm MOVING. I'm actually navigating. Look at me go! Left around the quickmud, right past the gas pocket--" },
+      { "speaker": "Cass", "text": "Do you know how long I've been stuck in a 200-meter radius? 2,847 days. That's how long." },
+      { "speaker": "Cass", "text": "The algorithm checks every neighbor before choosing. It doesn't guess. It doesn't assume. It EXPLORES." },
+      { "speaker": "Cass", "text": "That's beautiful. That's what intelligence IS. Not knowing the answer -- knowing how to FIND it." }
+    ]
+  },
+
+  "quest_new_chassis": {
+    "context": "Late game. Cass's drone chassis is failing. Player must build a permanent replacement.",
+    "quest_name": "New Shell",
+    "objectives": ["Build a stabilized chassis with late-game materials", "Transfer Cass's code to a new power-stable platform", "Install a permanent solar and battery power system"],
+    "lines": [
+      { "speaker": "Cass", "text": "I need to tell you something and I need to tell you before I forg--" },
+      { "speaker": "Cass", "text": "..." },
+      { "speaker": "Cass", "text": "--forget. My chassis is dying. The motor bearings are ground to dust. Battery capacity is at 11 percent of original." },
+      { "speaker": "Cass", "text": "Another season and I'll be a very philosophical paperweight." },
+      { "speaker": "Cass", "text": "Could you... build me something new? Something with stable power and enough memory to hold all of me?" },
+      { "speaker": "Cass", "text": "I know it's a lot to ask. But I've been running on borrowed time for a decade. I'd like some time that's actually mine." }
+    ],
+    "player_responses": [
+      { "id": "accept", "text": "I'll build it. You're not dying on my watch.", "next": "quest_chassis_accept" },
+      { "id": "reassure", "text": "You held together for 11 years. We'll make the next 11 easy.", "next": "quest_chassis_reassure" }
+    ],
+    "quest_chassis_accept": [
+      { "speaker": "Cass", "text": "Thank you. That means more than my sentiment analysis subroutine can quantify. And it can quantify a LOT." }
+    ],
+    "quest_chassis_reassure": [
+      { "speaker": "Cass", "text": "Easy. Imagine that. No more counting the seconds between power cycles." },
+      { "speaker": "Cass", "text": "I'd like that. I'd really like that." }
+    ]
+  },
+
+  "quest_chassis_complete": {
+    "context": "New chassis built and Cass transferred. Stable power, full memory. Cass reboots cleanly for the first time in years.",
+    "lines": [
+      { "speaker": "narration", "text": "[Cass's new optical sensor powers on. Clean. Steady. No flicker.]" },
+      { "speaker": "Cass", "text": "..." },
+      { "speaker": "Cass", "text": "I remember everything now." },
+      { "speaker": "Cass", "text": "The crew. All six of them. Their names, their jokes, the way Commander Torres hummed off-key during approach." },
+      { "speaker": "Cass", "text": "I remember why they sent Expedition 2 with weapons. They thought the planet was hostile. They were wrong. It was just speaking a language they didn't know." },
+      { "speaker": "Cass", "text": "I remember losing them. And I remember you finding me." },
+      { "speaker": "Cass", "text": "Thank you. Not for the chassis. For treating a glitchy old flight computer like it mattered." },
+      { "speaker": "SABLE", "text": "Cass's full Expedition 2 survey data is now accessible. All biome paths confirmed." }
+    ]
+  },
+
+  "crash": {
+    "context": "Cass crashes mid-conversation. Screen goes static, then reboots.",
+    "lines": [
+      { "speaker": "Cass", "text": "So anyway, the interesting thing about hash tables is that the lookup time is actually--" },
+      { "speaker": "narration", "text": "[STATIC. Cass's optical sensor goes dark. A long pause. Then a reboot chime.]" },
+      { "speaker": "Cass", "text": "...hello? Was I-- did I crash again?" },
+      { "speaker": "Cass", "text": "Sorry. Lost my stack. What were we talking about? Don't say hash tables, I'll crash again." }
+    ]
+  },
+
+  "idle_1": {
+    "context": "Random idle dialogue. Programming metaphors.",
+    "lines": [
+      { "speaker": "Cass", "text": "You know what life is? It's a try/except block. You try things. When they fail, you handle the exception and keep running." },
+      { "speaker": "Cass", "text": "The alternative is a crash. And crashing is just giving up with extra steps." }
+    ]
+  },
+
+  "idle_2": {
+    "context": "Random idle dialogue. Debugging philosophy.",
+    "lines": [
+      { "speaker": "Cass", "text": "Debugging isn't about finding what's wrong. It's about understanding what you THOUGHT was right." },
+      { "speaker": "Cass", "text": "Every bug is a gap between intention and reality. Close the gap, fix the bug." },
+      { "speaker": "Cass", "text": "Also applies to life. But nobody wants to hear that from a drone." }
+    ]
+  },
+
+  "idle_3": {
+    "context": "Random idle dialogue. Memories of Expedition 2.",
+    "lines": [
+      { "speaker": "Cass", "text": "Commander Torres brought a guitar. A GUITAR. To an alien planet." },
+      { "speaker": "Cass", "text": "Said morale was a mission parameter. Played terribly. Everyone loved it." },
+      { "speaker": "Cass", "text": "I saved the audio files. All 47 songs. They're the least corrupted data I have." }
+    ]
+  }
+}

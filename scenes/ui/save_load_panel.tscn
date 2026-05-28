@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsaveload001"]
+
+[ext_resource type="Script" path="res://scripts/ui/save_load_panel.gd" id="1_saveload"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saveload_bg"]
+bg_color = Color(0.06, 0.06, 0.1, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.35, 0.5)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="SaveLoadPanel" type="CanvasLayer"]
+layer = 21
+process_mode = 3
+script = ExtResource("1_saveload")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -60.0
+offset_right = 75.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2(150, 120)
+theme_override_styles/panel = SubResource("StyleBoxFlat_saveload_bg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+add_theme_constant_override("separation", 2)
+
+[node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "SAVE GAME"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 7
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="SlotContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+add_theme_constant_override("separation", 2)
+
+[node name="BtnBack" type="Button" parent="Panel/MarginContainer/VBox"]
+layout_mode = 2
+text = "Back"
+theme_override_font_sizes/font_size = 6
