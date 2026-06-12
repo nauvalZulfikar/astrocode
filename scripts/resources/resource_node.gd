@@ -39,6 +39,11 @@ func _ready() -> void:
 		col = InventoryManager.ITEM_DB[resource_id]["color"]
 	sprite.color = col
 
+	# Diamond silhouette: a gem/ore shape that reads as a gatherable resource,
+	# distinct from the square stations and robots.
+	sprite.pivot_offset = Vector2(4, 4)
+	sprite.rotation = deg_to_rad(45)
+
 
 ## Called by the player when pressing interact while nearby.
 func start_gather(player: Node2D) -> void:
