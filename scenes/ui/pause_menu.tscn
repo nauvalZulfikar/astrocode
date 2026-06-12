@@ -55,24 +55,24 @@ layout_mode = 2
 [node name="BtnResume" type="Button" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Resume"
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnSave" type="Button" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Save Game"
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnLoad" type="Button" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Load Game"
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnSettings" type="Button" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Settings"
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnQuit" type="Button" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Quit"
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7

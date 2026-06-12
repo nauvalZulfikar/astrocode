@@ -49,7 +49,7 @@ theme_override_font_sizes/font_size = 7
 [node name="TypeLabel" type="Label" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Type: scuttle"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="BatteryBar" type="ProgressBar" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
@@ -63,18 +63,18 @@ show_percentage = false
 [node name="StatusLabel" type="Label" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Status: idle"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="CargoLabel" type="Label" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Cargo: 0/6"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 autowrap_mode = 2
 
 [node name="TaskLabel" type="Label" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
 text = "Tasks queued: 0"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="ButtonRow" type="HBoxContainer" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
@@ -83,19 +83,19 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Go Here"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnGather" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Gather"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnReturn" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Return"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="ButtonRow2" type="HBoxContainer" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
@@ -104,10 +104,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Shutdown"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 
 [node name="BtnClose" type="Button" parent="Panel/MarginContainer/VBox/ButtonRow2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Close"
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7

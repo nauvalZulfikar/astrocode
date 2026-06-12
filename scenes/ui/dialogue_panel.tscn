@@ -50,7 +50,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue text appears here..."
 autowrap_mode = 2
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
@@ -63,5 +63,5 @@ visible = false
 layout_mode = 2
 text = "[E] Continue"
 horizontal_alignment = 2
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 7
 theme_override_colors/font_color = Color(0.5, 0.5, 0.6, 1)

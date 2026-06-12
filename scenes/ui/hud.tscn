@@ -80,7 +80,7 @@ size_flags_vertical = 0
 layout_mode = 2
 text = "HP"
 horizontal_alignment = 0
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxLeft"]
 layout_mode = 2
@@ -95,7 +95,7 @@ show_percentage = false
 layout_mode = 2
 text = "O2"
 horizontal_alignment = 0
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="OxygenBar" type="ProgressBar" parent="MarginContainer/VBoxLeft"]
 layout_mode = 2
@@ -110,7 +110,7 @@ show_percentage = false
 layout_mode = 2
 text = "EP"
 horizontal_alignment = 0
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="EnergyBar" type="ProgressBar" parent="MarginContainer/VBoxLeft"]
 layout_mode = 2
@@ -125,7 +125,7 @@ show_percentage = false
 layout_mode = 2
 text = "Food"
 horizontal_alignment = 0
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="HungerBar" type="ProgressBar" parent="MarginContainer/VBoxLeft"]
 layout_mode = 2
@@ -151,7 +151,7 @@ theme_override_font_sizes/font_size = 7
 layout_mode = 2
 text = "DAY"
 horizontal_alignment = 2
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 
 [node name="InteractPrompt" type="Label" parent="."]
 anchors_preset = 7
@@ -166,4 +166,4 @@ offset_bottom = -6.0
 text = "Press E to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
