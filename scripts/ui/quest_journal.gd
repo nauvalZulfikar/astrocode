@@ -4,8 +4,8 @@ extends CanvasLayer
 
 # --- Node references ---
 @onready var panel: PanelContainer = $Panel
-@onready var active_container: VBoxContainer = $Panel/MarginContainer/VBoxContainer/ActiveSection/ActiveList
-@onready var completed_container: VBoxContainer = $Panel/MarginContainer/VBoxContainer/CompletedSection/CompletedList
+@onready var active_container: VBoxContainer = $Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestList/ActiveSection/ActiveList
+@onready var completed_container: VBoxContainer = $Panel/MarginContainer/VBoxContainer/ScrollContainer/QuestList/CompletedSection/CompletedList
 
 var is_open: bool = false
 

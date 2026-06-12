@@ -29,10 +29,10 @@ enum TokenType {
 }
 
 # --- Keywords ---
-const KEYWORDS: PackedStringArray = PackedStringArray([
+const KEYWORDS: PackedStringArray = [
 	"if", "elif", "else", "while", "and", "or", "not",
 	"True", "False", "None", "print", "str",
-])
+]
 
 # --- Execution state ---
 var _output: Array[String] = []

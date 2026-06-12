@@ -8,7 +8,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.3, 0.35, 0.5)
+border_color = Color(0.3, 0.35, 0.5, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -41,7 +41,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
-add_theme_constant_override("separation", 2)
+theme_override_constants/separation = 2
 
 [node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2
@@ -60,7 +60,7 @@ horizontal_scroll_mode = 0
 [node name="SlotContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-add_theme_constant_override("separation", 2)
+theme_override_constants/separation = 2
 
 [node name="BtnBack" type="Button" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2

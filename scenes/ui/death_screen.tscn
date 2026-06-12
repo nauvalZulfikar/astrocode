@@ -8,7 +8,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.6, 0.15, 0.15)
+border_color = Color(0.6, 0.15, 0.15, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -41,7 +41,7 @@ theme_override_constants/margin_bottom = 6
 
 [node name="VBox" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
-add_theme_constant_override("separation", 4)
+theme_override_constants/separation = 4
 
 [node name="TitleLabel" type="Label" parent="Panel/MarginContainer/VBox"]
 layout_mode = 2

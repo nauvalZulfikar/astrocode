@@ -39,9 +39,9 @@ const O2_RATE_SEALED: float = 0.0           # inside sealed base
 var is_in_sealed_room: bool = false
 
 # Biomes that count as toxic atmosphere.
-const TOXIC_BIOMES: PackedStringArray = PackedStringArray([
+const TOXIC_BIOMES: PackedStringArray = [
 	"spore_marshes", "magma_veins", "polar_sink"
-])
+]
 
 # --- Health regen ---
 # Passive regen: 1 HP/min when hunger > 50%.
