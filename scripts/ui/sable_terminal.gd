@@ -55,6 +55,10 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_open and event.is_action_pressed("pause"):
+		toggle()
+		get_viewport().set_input_as_handled()
+		return
 	if event.is_action_pressed("open_terminal"):
 		toggle()
 		get_viewport().set_input_as_handled()

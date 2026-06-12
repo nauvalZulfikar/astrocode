@@ -35,6 +35,12 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Escape closes the panel (it can be opened via E at a workbench, so Esc is
+	# the universal "back").
+	if is_open and event.is_action_pressed("pause"):
+		close()
+		get_viewport().set_input_as_handled()
+		return
 	if event.is_action_pressed("open_crafting"):
 		if is_open:
 			close()

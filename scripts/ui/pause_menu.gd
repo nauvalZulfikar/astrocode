@@ -34,9 +34,25 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if is_open:
 			close()
+			get_viewport().set_input_as_handled()
+		elif _any_other_panel_open():
+			# Another panel is open — let its own Esc handler close it instead
+			# of stacking the pause menu on top. Don't consume the event.
+			return
 		else:
 			open()
-		get_viewport().set_input_as_handled()
+			get_viewport().set_input_as_handled()
+
+
+## True if any sibling UI panel reports itself open (so Esc should close that
+## panel, not open pause).
+func _any_other_panel_open() -> bool:
+	for sib in get_parent().get_children():
+		if sib == self:
+			continue
+		if sib.get("is_open") == true:
+			return true
+	return false
 
 
 ## Open the pause menu and freeze the game.
