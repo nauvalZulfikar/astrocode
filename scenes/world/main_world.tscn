@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmainworld001"]
+[gd_scene load_steps=20 format=3 uid="uid://bmainworld001"]
 
 [ext_resource type="Script" path="res://scripts/world/main_world.gd" id="1_world"]
+[ext_resource type="Script" path="res://scripts/world/ground_layer.gd" id="19_ground"]
 [ext_resource type="PackedScene" uid="uid://bplayer001" path="res://scenes/player/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" uid="uid://bhud001" path="res://scenes/ui/hud.tscn" id="3_hud"]
 [ext_resource type="PackedScene" uid="uid://binventory001" path="res://scenes/ui/inventory_panel.tscn" id="4_inv"]
@@ -20,14 +21,20 @@
 [ext_resource type="PackedScene" uid="uid://bcircuitworkbench001" path="res://scenes/world/circuit_workbench.tscn" id="18_circuitworkbench"]
 
 [node name="MainWorld" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_world")
 
 [node name="Background" type="ColorRect" parent="."]
+z_index = -10
 offset_left = -500.0
 offset_top = -500.0
 offset_right = 500.0
 offset_bottom = 500.0
 color = Color(0.72, 0.65, 0.5, 1)
+
+[node name="Ground" type="TileMapLayer" parent="."]
+z_index = -5
+script = ExtResource("19_ground")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(1, 1, 1, 1)
