@@ -54,10 +54,14 @@ Append to any prompt: `restricted muted retro palette, oranges/teals/warm earth 
 
 ---
 
-## SECTION 2 — Title / splash screen (1 image)
+## SECTION 2 — Title / splash screen (1 image)  ✅ SLOT IS LIVE
 
 **Use for:** main menu background.
-**Save to:** `assets/ui/title_bg.png`
+**Save to:** `assets/ui/title_bg.png` — **already wired.** The title screen
+(`scenes/ui/title_screen.tscn`, the game's main scene) auto-loads this file. A
+procedural placeholder is in place now; just overwrite `assets/ui/title_bg.png`
+with your Higgsfield image (320x180 or any 16:9) and reopen the game — it shows
+immediately, no code needed. Prompt:
 
 ```
 Lone astronaut in burnt-orange coveralls and a white open-face helmet standing beside a
