@@ -12,7 +12,25 @@ signal interacted_with(body: Node2D)
 
 # --- Node references ---
 @onready var interaction_area: Area2D = $InteractionArea
-@onready var sprite: ColorRect = $Sprite
+@onready var sprite: Sprite2D = $Sprite
+
+# --- Directional sprites (Kade, 8-way static rotation) ---
+const DIR_TEXTURES: Dictionary = {
+	"east": preload("res://assets/sprites/player/kade/east.png"),
+	"south-east": preload("res://assets/sprites/player/kade/south-east.png"),
+	"south": preload("res://assets/sprites/player/kade/south.png"),
+	"south-west": preload("res://assets/sprites/player/kade/south-west.png"),
+	"west": preload("res://assets/sprites/player/kade/west.png"),
+	"north-west": preload("res://assets/sprites/player/kade/north-west.png"),
+	"north": preload("res://assets/sprites/player/kade/north.png"),
+	"north-east": preload("res://assets/sprites/player/kade/north-east.png"),
+}
+# Index order matches round(angle / 45deg), angle from Vector2.angle() (y-down, 0 = east).
+const DIR_ORDER: Array[String] = [
+	"east", "south-east", "south", "south-west",
+	"west", "north-west", "north", "north-east",
+]
+var _facing: String = "south"
 
 # --- Internal ---
 var _nearby_interactables: Array[Node2D] = []
@@ -28,6 +46,9 @@ func _ready() -> void:
 	interaction_area.area_exited.connect(_on_interaction_area_exited)
 
 	GameManager.player_died.connect(_on_player_died)
+
+	# Start facing south (idle).
+	sprite.texture = DIR_TEXTURES[_facing]
 
 
 func _physics_process(delta: float) -> void:
@@ -61,6 +82,10 @@ func _physics_process(delta: float) -> void:
 	velocity = input_dir.normalized() * speed
 	move_and_slide()
 
+	# Update facing sprite when moving.
+	if input_dir.length() > 0.0:
+		_update_facing(input_dir)
+
 	# Sprint energy cost: -1 EP per 15 real seconds.
 	if is_sprinting:
 		var drain: float = (1.0 / 15.0) * delta * GameManager.get_energy_drain_multiplier()
@@ -69,6 +94,16 @@ func _physics_process(delta: float) -> void:
 	# --- Interaction input ---
 	if Input.is_action_just_pressed("interact"):
 		_try_interact()
+
+
+## Snap a movement vector to the nearest of 8 directions and swap the sprite.
+func _update_facing(dir: Vector2) -> void:
+	var idx: int = int(round(dir.angle() / (PI / 4.0)))
+	idx = ((idx % 8) + 8) % 8
+	var dir_name: String = DIR_ORDER[idx]
+	if dir_name != _facing:
+		_facing = dir_name
+		sprite.texture = DIR_TEXTURES[dir_name]
 
 
 ## Attempt to interact with the nearest interactable.
