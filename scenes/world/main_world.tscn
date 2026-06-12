@@ -64,7 +64,7 @@ tier = 1
 position = Vector2(-80, 60)
 npc_id = "wren"
 npc_name = "Wren"
-npc_color = Color(0.85, 0.55, 0.3, 1)
+npc_color = Color(0.25, 0.62, 0.55, 1)
 
 [node name="PauseMenu" parent="." instance=ExtResource("12_pause")]
 

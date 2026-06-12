@@ -32,6 +32,12 @@ func _ready() -> void:
 	if _sprite:
 		_sprite.color = npc_color
 
+	# Show the NPC's name above their head (hidden for unnamed base NPCs).
+	var name_label: Label = $NameLabel as Label
+	if name_label:
+		name_label.text = npc_name
+		name_label.visible = npc_name != ""
+
 	# Hide speech bubble initially.
 	if _speech_bubble:
 		_speech_bubble.visible = false
