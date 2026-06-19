@@ -2,3 +2,6 @@
 *.tmp
 tmp/
 export_presets.cfg
+
+# graphify knowledge graph output
+graphify-out/
